@@ -2,19 +2,19 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import Counter from '../components/Counter';
-import { decrease, increase } from '../moules/counter';
+import { decrease, decreaseAsync, increase, increaseAsync } from '../moules/counter';
 
 function CounterContainer() {
-  const number = useSelector(state => state.counter.number)
-  const dispatch = useDispatch()
+  const number = useSelector(state => state.counter);
+  const dispatch = useDispatch();
 
   const onIncrease = () => {
-    dispatch(increase())
-  }
-
+    dispatch(increaseAsync());
+  };
   const onDecrease = () => {
-    dispatch(decrease())
-  }
+    dispatch(decreaseAsync());
+  };
+
 
   return <Counter number={number} onIncrease={onIncrease} onDecrease={onDecrease}/>
 }
