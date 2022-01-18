@@ -1,4 +1,4 @@
-import { delay, put, takeEvery, takeLatest } from "redux-saga/effects";
+import { call, delay, put, takeEvery, takeLatest } from "redux-saga/effects";
 
 // 액션 타입
 const INCREASE = 'INCREASE';
